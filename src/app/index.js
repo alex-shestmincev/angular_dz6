@@ -1,17 +1,32 @@
 'use strict';
 
-angular.module('dz2', [ 'ngResource', 'ui.router','LocalStorageModule'])
+angular.module('dz3', [ 'ui.router','LocalStorageModule'])
   .config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider) {
     $stateProvider
-      .state('home', {
-        url: '/',
-        templateUrl: 'app/guest/guest.html',
-        controller: 'GuestCtrl'
+      .state('login', {
+        url: '/login',
+        templateUrl: 'app/login/login.html',
+        controller: 'LoginCtrl'
+        ,params: {'logout':false}
+      })
+      .state('main', {
+        url: '/main',
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl'
+      })
+      .state('other', {
+        url: '/other',
+        templateUrl: 'app/other/other.html',
+        controller: 'OtherCtrl'
+      })
+      .state('admin', {
+        url: '/admin',
+        templateUrl: 'app/admin/admin.html',
+        controller: 'AdminCtrl'
       });
 
-    localStorageServiceProvider.setPrefix('guests');
+    localStorageServiceProvider.setPrefix('user');
     localStorageServiceProvider.setStorageType('sessionStorage');
 
-    $urlRouterProvider.otherwise('/');
-  })
-;
+    $urlRouterProvider.otherwise('/login');
+  });
