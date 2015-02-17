@@ -3,13 +3,13 @@
 angular.module('dz3')
   .config(function($stateProvider,menuProvider) {
 
-    var permissionOnly = ['admin'];
+    var permissionOnly = ['user','admin'];
 
     $stateProvider
-      .state('admin', {
-        url: '/admin',
-        templateUrl: 'app/admin/admin.html',
-        controller: 'AdminCtrl',
+      .state('main', {
+        url: '/main',
+        templateUrl: 'app/main/main.html',
+        controller: 'MainCtrl',
         data:{
           permissions: {
             only: permissionOnly
@@ -17,6 +17,5 @@ angular.module('dz3')
         }
       });
 
-    menuProvider.add('Admin','admin',permissionOnly);
+    menuProvider.add('Main','main',permissionOnly);
   });
-
