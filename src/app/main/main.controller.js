@@ -1,6 +1,8 @@
 'use strict';
 
 angular.module('dz3')
-  .controller("MainCtrl",['$scope',function($scope){
+  .controller("MainCtrl", function($scope,menu){
 
-  }]);
+    $scope.menuitems = menu.getitems();
+
+  });

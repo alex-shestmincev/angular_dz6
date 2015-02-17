@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dz3', [ 'ui.router','LocalStorageModule'])
+angular.module('dz3', [ 'ui.router','LocalStorageModule','dz3.admin'])
   .config(function ($stateProvider, $urlRouterProvider,localStorageServiceProvider) {
     $stateProvider
       .state('login', {
@@ -18,15 +18,7 @@ angular.module('dz3', [ 'ui.router','LocalStorageModule'])
         url: '/other',
         templateUrl: 'app/other/other.html',
         controller: 'OtherCtrl'
-      })
-      .state('admin', {
-        url: '/admin',
-        templateUrl: 'app/admin/admin.html',
-        controller: 'AdminCtrl'
       });
-
-    localStorageServiceProvider.setPrefix('user');
-    localStorageServiceProvider.setStorageType('sessionStorage');
 
     $urlRouterProvider.otherwise('/login');
   });

@@ -1,6 +1,6 @@
 'use strict';
 
-describe('The main view', function () {
+describe('The login view', function () {
   var page;
 
   beforeEach(function () {
