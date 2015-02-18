@@ -1,4 +1,4 @@
-angular.module('dz3').provider('menu',function MenuProvider(){
+angular.module('dz5').provider('menu',function MenuProvider(){
 
   var menuItems = [];
   var menuItemsByRole = [];
@@ -6,14 +6,33 @@ angular.module('dz3').provider('menu',function MenuProvider(){
 
   this.add = function(title,state,permission){
 
-    var newItem = {
-      'title' : title,
-      'state' : state,
-      'permission' : permission
-    };
 
-    menuItems.push(newItem);
-    console.log(newItem);
+    if (angular.isArray(title) && angular.isArray(state)){
+      var childs = [];
+      for (var i = 1; i < title.length; i++) {
+        childs.push({'title': title[i], 'state': state[i]});
+      }
+
+      var newItem = {
+        'title' : title[0],
+        'state' : state[0],
+        'permission' : permission,
+        'childs' : childs
+      };
+      menuItems.push(newItem);
+    }else{
+      var newItem = {
+        'title' : title,
+        'state' : state,
+        'permission' : permission,
+        'childs': []
+      };
+      menuItems.push(newItem);
+    }
+
+
+
+
 
   }
 

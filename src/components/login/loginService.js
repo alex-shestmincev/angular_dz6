@@ -1,4 +1,4 @@
-angular.module('dz3').factory('loginService',['$q',function($q){
+angular.module('dz5').factory('loginService',['$q',function($q){
 
   var user;
   var userRole;
@@ -23,7 +23,6 @@ angular.module('dz3').factory('loginService',['$q',function($q){
 
   function isRole(role){
     var user_role = getRole();
-    console.log(user_role,role,user_role === role);
     return user_role === role;
   }
 

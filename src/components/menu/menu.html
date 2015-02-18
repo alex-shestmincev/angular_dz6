@@ -5,7 +5,20 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
 
       <ul class="nav navbar-nav">
-        <li ng-repeat="menuitem in menuitems"><a ui-sref="{{menuitem.state}}">{{menuitem.title}}</a></li>
+        <li ng-repeat="menuitem in menuitems" class="dropdown open">
+          <a class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true" ui-sref="{{menuitem.state}}">
+            {{menuitem.title}} <span ng-if="menuitem.childs.length > 0" class="caret"></span>
+          </a>
+
+          <ul ng-if="menuitem.childs.length" class="dropdown-menu" role="menu">
+            <li ng-repeat="subitem in menuitem.childs">
+              <a ui-sref="{{subitem.state}}">{{subitem.title}}</a>
+            </li>
+          </ul>
+        </li>
+
+
+
       </ul>
 
       <ul class="nav navbar-nav navbar-right" ng-if="userRole !== 'guest'">
