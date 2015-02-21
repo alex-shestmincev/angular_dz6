@@ -4,5 +4,13 @@
 
 <h1>This is admin page</h1>
 
+  <h2>Comment</h2>
+  <form name="AdminCommentForm">
+    <textarea ng-model="commentText" ng-change="DirtyStateOn()" name="commentText"></textarea>
+    <br/>
+
+    <input type="submit" ng-click="DirtyStateOff()" />
+  </form>
+
 
 </div>

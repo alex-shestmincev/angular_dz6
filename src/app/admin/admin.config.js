@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('dz5')
+angular.module('dz6')
   .config(function($stateProvider,menuProvider) {
 
     var permissionOnly = ['admin'];
@@ -9,12 +9,7 @@ angular.module('dz5')
       .state('admin', {
         url: '/admin',
         templateUrl: 'app/admin/admin.html',
-        controller: 'AdminCtrl',
-        data:{
-          permissions: {
-            only: permissionOnly
-          }
-        }
+        controller: 'AdminCtrl'
       });
 
     menuProvider.add('Admin','admin',permissionOnly);

@@ -1,4 +1,4 @@
-angular.module('dz5').provider('menu',function MenuProvider(){
+angular.module('dz6').provider('menu',function MenuProvider(){
 
   var menuItems = [];
   var menuItemsByRole = [];

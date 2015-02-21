@@ -1,3 +1,6 @@
+<div class="notice" style="padding:10px;display:none">
+  У вас не сохраненные изменения <button>Перейти</button>
+</div>
 <nav class="navbar navbar-static-top navbar-inverse" ng-controller="MenuCtrl">
   <div class="container-fluid">
 
@@ -29,3 +32,18 @@
     </div>
   </div>
 </nav>
+
+<div ng-controller="ModalDemoCtrl">
+  <script type="text/ng-template" id="myModalContent.html">
+    <div class="modal-header">
+      <h3 class="modal-title">Внимание</h3>
+    </div>
+    <div class="modal-body">
+      На странице есть несохраненные данные, вы действительно хотите продолжить?
+    </div>
+    <div class="modal-footer">
+      <button class="btn btn-primary" ng-click="ok()">Продолжить</button>
+      <button class="btn btn-warning" ng-click="cancel()">Отмена</button>
+    </div>
+  </script>
+</div>

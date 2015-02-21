@@ -1,4 +1,4 @@
-angular.module('dz5').factory('loginService',['$q',function($q){
+angular.module('dz6').factory('loginService',['$q',function($q){
 
   var user;
   var userRole;

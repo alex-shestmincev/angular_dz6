@@ -1,6 +1,12 @@
 'use strict';
 
-angular.module('dz5')
-  .controller("OtherCtrl",['$scope',function($scope){
+angular.module('dz6')
+  .controller("OtherCtrl",function($scope){
 
-  }]);
+    $scope.commentText;
+
+
+
+
+
+  });
